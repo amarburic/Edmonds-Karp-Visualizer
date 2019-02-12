@@ -146,7 +146,7 @@ var Algorithm = (function(){
         augmentingPath = findAugmentingPath();
         if(augmentingPath.path.length == 0) {
             finished = true;
-            return {graph: getGraphWithFlow(), flow: flow, finished: true, bfsSteps: augmentingPath.steps, deltaSteps: null};
+            return {bfsSteps: augmentingPath.steps, deltaSteps: null};
         }
         history.push({"edges": JSON.parse(JSON.stringify(edges)), "flow": flow})
         delta = findDelta(augmentingPath.path);
